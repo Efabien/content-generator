@@ -1,0 +1,83 @@
+.wrapper {
+  display: flex;
+  padding-top: 4vh;
+  padding-left: 4vh;
+  flex-direction: column;
+  width: 30vw;
+  padding: 5%;
+  border-width: 1px;
+}
+
+.form-group {
+  display: flex;
+  justify-content: space-between;
+}
+
+.registration-form{
+  display: flex;
+  margin-right: 1vw;
+    input {
+      margin-top: 0;
+      margin-bottom: 0
+    }
+    label {
+      margin-right: 1vw;
+    }
+}
+
+.input-pair label, .input-pair input {
+  width: 20vw;
+}
+
+button {
+  width: 10vw;
+}
+
+.form-group, .input-pair {
+  margin-bottom: 0.5vh;
+}
+
+.registration-form {
+  margin-bottom: 1.5vh;
+}
+
+.error {
+  border: solid;
+  border-color: red;
+}
+
+.error-message {
+  color: red;
+}
+
+.skeleton-loader {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      width: 800px;
+  height: 580px;
+      
+      margin: 0 auto;
+    }
+
+    .skeleton-loader__item {
+      height: 20px;
+      background-color: #f0f0f0;
+      animation: loading 1s infinite;
+    }
+
+    .skeleton-loader__item--large {
+      height: 100px;
+    }
+
+    @keyframes loading {
+      0% {
+        background-color: #f0f0f0;
+      }
+      50% {
+        background-color: #e0e0e0;
+      }
+      100% {
+        background-color: #f0f0f0;
+      }
+    }

@@ -1,0 +1,6 @@
+<div class="container" [formGroup]="formGroup">
+  <div #backdrop class="backdrop">
+    <div class="highlights" [innerHTML]="highlightedText"></div>
+  </div>
+  <textarea (scroll)="handleScroll()" #textarea formControlName="content"></textarea>
+</div>

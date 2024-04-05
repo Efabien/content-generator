@@ -1,0 +1,44 @@
+<div [formGroup]="form" style="display: flex;">
+  <div class="wrapper">
+    <h1>Supercharge your creativity with AI</h1>
+    <div class="input-pair">
+      <label>Select your themes</label>
+      <select formControlName="theme">
+        <ng-container *ngFor="let theme of themes">
+          <option [value]="theme"> {{ theme  }}</option>
+        </ng-container>
+      </select>
+    </div>
+    <div class="input-pair">
+      <label>Select your tone</label>
+      <select formControlName="tone">
+        <ng-container *ngFor="let tone of tones">
+          <option [value]="tone"> {{ tone  }}</option>
+        </ng-container>
+      </select>
+    </div>
+    <div class="input-pair">
+      <label>Add keywords (comma separated)</label>
+      <input formControlName="keywords" type="text">
+    </div>
+    <div class="input-pair">
+      <label>Language</label>
+      <select formControlName="language">
+        <ng-container *ngFor="let language of languages">
+          <option [value]="language"> {{ language  }}</option>
+        </ng-container>
+      </select>
+    </div>
+    <button (click)="generate()">
+      Generate <span *ngIf="isProcessing">...</span>
+    </button>
+  </div>
+  <app-content *ngIf="form.controls['content'].value"></app-content>
+  <div *ngIf="isProcessing && !form.controls['content'].value" class="skeleton-loader">
+      <div class="skeleton-loader__item"></div>
+      <div class="skeleton-loader__item"></div>
+      <div class="skeleton-loader__item--large"></div>
+      <div class="skeleton-loader__item"></div>
+      <div class="skeleton-loader__item"></div>
+    </div>
+</div>
